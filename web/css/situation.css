@@ -1,0 +1,238 @@
+/*导航设置*/
+
+body {
+    /*height: 100%;*/
+    /*background: #eaecf0;*/
+    background: #F1F5FF;
+    font-size: 20px;
+}
+
+
+/*南京理工大学疫情管理平台字体大小*/
+
+.title {
+    font-size: 25px;
+}
+
+.light-mode {
+    --primary-color: white;
+    --info-color: #2169f6;
+    --info-color-darker: white;
+    --info-color-lighter: #7c8b97;
+    --secondary-color: #7c8b97;
+    --secondary-color-lightest: white;
+    --secondary-color-darkest: black;
+}
+
+.dark-mode {
+    --primary-color: #11101d;
+    --info-color: white;
+    --info-color-darker: #11101d;
+    --info-color-lighter: white;
+    --secondary-color: #b8b7bb;
+    --secondary-color-darker: #41404a;
+    --secondary-color-lighter: #242431;
+    --secondary-color-darkest: white;
+    --secondary-color-lightest: #b8b7bb;
+}
+
+.blue-mode {
+    --primary-color: #2f49d0;
+    --info-color: #1a2b81;
+    --info-color-darker: #f3f3f3;
+    --info-color-lighter: white;
+    --secondary-color: #c5cbe6;
+    --secondary-color-darker: #576bd7;
+    --secondary-color-lighter: #3951d1;
+    --secondary-color-darkest: white;
+    --secondary-color-lightest: #c5cbe6;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+
+/*导航栏高度*/
+
+.nav {
+    /*height: 100%;*/
+    height: 1080px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu>*~* {
+    margin-top: 0.5rem;
+}
+
+
+/*点击效果*/
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--secondary-color);
+    white-space: nowrap;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/*点击效果*/
+
+.menu-item.active {
+    color: var(--info-color-darker);
+    background: var(--info-color);
+}
+
+.nav-background {
+    background: var(--primary-color)
+}
+
+.nav-background-lighter {
+    background: var(--primary-color-lighter)
+}
+
+button,
+textarea {
+    font: inherit;
+    margin: 0
+}
+
+button {
+    outline: 0;
+    cursor: pointer
+}
+
+
+/*input,*/
+
+textarea {
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.box-border {
+    box-sizing: border-box
+}
+
+.hidden {
+    display: none
+}
+
+.block {
+    display: block
+}
+
+.flex {
+    display: flex
+}
+
+.icon-space {
+    margin-right: 1.25rem!important
+}
+
+.nav-with {
+    padding-left: 1.5rem!important;
+    padding-right: 1.5rem!important
+}
+
+.li-space {
+    margin-top: 1.5rem!important
+}
+
+.nav-title {
+    padding-top: 3rem!important;
+    padding-bottom: 3rem!important
+}
+
+.in-title {
+    margin-left: 50px;
+    color: #1A2B81;
+}
+
+
+/*主体设置*/
+
+.all1 {
+    margin-top: 200px;
+    font-family: "黑体";
+}
+
+.all2{
+    margin-left: 300px;
+}
+.tr1 {
+    height: 29px;
+    align-content: center;
+}
+
+.tr2 {
+    height: 30px;
+}
+
+.td1 {
+    width: 116px;
+}
+
+.td3{
+    width: 120px;
+}
+
+.td2 {
+    width: 120px;
+    /*font-weight: 300;*/
+}
+
+.font-base {
+    font-weight: 800;
+    font-size: 30px;
+    font-family: "黑体";
+}
+
+.qz {
+    color: #e83132;
+}
+
+.in-title1{
+    font-family: "黑体";
+    font-size: 36px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.in-title2{
+    font-family: "黑体";
+    font-size: 30px;
+    /*margin-top: 330px;*/
+    /*padding-top: 50px;*/
+}
+.in-title3{
+    font-family: "黑体";
+    font-size: 30px;
+    margin-top: 55px;
+}
+.table1{
+    float: left;
+    /*margin-top: 300px;*/
+    /*margin-left: 30px;*/
+}
+
+.table2 {
+    /*margin-top: 500px;*/
+    float:initial;
+}

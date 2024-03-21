@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.OutReportMapper">
+
+
+    <insert id="insertOutReport" parameterType="edu.njust.entity.OutReport">
+		insert into OutReport values(null,#{ID},#{outDate},#{plannedBackDate},#{destination},null)
+	</insert>
+
+	<select id="selectNotBackByID" parameterType="int" resultType="int">
+		select count(OutReportID) from OutReport where ActualBackDate is null and OutReportID=#{orID}
+	</select>
+
+	<select id="selectReportIDByID" parameterType="String" resultType="int">
+		select OutReportID from OutReport where OutDate =(select max(OutDate) from OutReport where ID=#{id}) and ID=#{id}
+	</select>
+
+	<select id="selectIDByRID" parameterType="int" resultType="String">
+		select ID from OutReport where OutReportID=#{outID}
+	</select>
+
+	<select id="selectUser" parameterType="String" resultType="edu.njust.entity.OutReport">
+		select outReportID,ID,outDate,plannedBackDate,destination,actualBackDate from OutReport
+		where ID=#{id}
+	</select>
+
+	<select id="selectReportIDNotBack" resultType="edu.njust.entity.OutReport">
+		select outReportID,ID,outDate,plannedBackDate,destination,actualBackDate from OutReport
+		where ActualBackDate is null
+	</select>
+
+	<update id="updateActualBackDate">
+		update OutReport set ActualBackDate=#{param2} where OutReportID=#{param1}
+	</update>
+
+	<select id="selectAbnormal" resultType="edu.njust.entity.OutReport">
+		select outReportID,ID,outDate,plannedBackDate,destination,actualBackDate from OutReport
+		where ActualBackDate != PlannedBackDate
+	</select>
+
+</mapper>

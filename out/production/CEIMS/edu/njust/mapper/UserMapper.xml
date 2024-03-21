@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.UserMapper">
+
+	<select id="queryPswdUserByID" resultType="String" parameterType="String">
+		select pswd from user where ID = #{id}
+	</select>
+
+	<select id="queryUserByID" resultType="edu.njust.entity.User" parameterType="String">
+		select ID,Pswd as password,Name,department from user where ID = #{id}
+	</select>
+
+	<insert id="insertUser" parameterType="edu.njust.entity.User">
+		insert into user values(#{ID},#{password},#{name},#{department},0)
+	</insert>
+
+	<update id="addAdmin" parameterType="String">
+		update user set IsAdmin=1 where ID = #{id}
+	</update>
+
+	<update id="cancelAdmin" parameterType="String">
+		update user set IsAdmin=0 where ID = #{id}
+	</update>
+
+	<delete id="deleteUser" parameterType="String">
+		delete from user where ID = #{id}
+	</delete>
+
+	<update id="updatePswd" parameterType="edu.njust.entity.User">
+		update user set Pswd=#{password} where Department=#{department}
+	</update>
+
+	<update id="updateUserByID" parameterType="edu.njust.entity.User" >
+		update user set Pswd=#{password},Department=#{department},Name=#{name} where ID=#{ID}
+	</update>
+
+	<select id="queryByDept" parameterType="String" resultType="edu.njust.entity.User">
+		select ID,Pswd as password,Name as name,Department as department from user where Department=#{dept}
+	</select>
+
+	<select id="queryIsAdmin" parameterType="String" resultType="boolean">
+		select IsAdmin from user where ID=#{id}
+	</select>
+
+	<select id="queryAllUser" resultType="edu.njust.entity.User">
+		select ID,Pswd as password,Name as name,Department as department from user
+	</select>
+
+	<select id="queryAllAdmin" resultType="edu.njust.entity.Admin">
+		select ID,Pswd as password,Name as name,Department as department from user where IsAdmin=true
+	</select>
+</mapper>

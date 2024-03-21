@@ -1,0 +1,150 @@
+
+*,
+::after,
+::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+/*中英文*/
+.language {
+    vertical-align: middle;
+    align-content: center;
+    margin-top: auto;
+    display: block;
+    width: 4%;
+    height: calc(1em + .75rem + 2px);
+    padding: 1rem .75rem;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #6e707e;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d1d3e2;
+    border-radius: .35rem;
+
+    /*font-size:.8rem;*/
+    border-radius:10rem;
+    padding:0.35rem 1rem
+}
+.language:focus {
+    color: #6e707e;
+    background-color: #fff;
+    border-color: #bac8f3;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 .2rem rgba(78, 115, 223, .25);
+    box-shadow: 0 0 0 .2rem rgba(78, 115, 223, .25)
+}
+.language1{
+    float: right;
+}
+.language2{
+    float: right;
+}
+.title_top{
+    margin-top: 60px;
+    align-content: center;
+    font-size: 40px;
+    color: #4E73DF;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+/*椭圆框*/
+form.user .control-user {
+    font-size:.8rem;
+    border-radius:10rem;
+    padding:1.5rem 1rem
+}
+
+
+/*横线格式*/
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1)
+}
+
+/*主体框*/
+.container {
+    width: 25%;
+    margin-top: 1rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6e707e;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d1d3e2;
+    border-radius: .35rem;
+    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out
+}
+/*点击特效*/
+.control:focus {
+    color: #6e707e;
+    background-color: #fff;
+    border-color: #bac8f3;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 .2rem rgba(78, 115, 223, .25);
+    box-shadow: 0 0 0 .2rem rgba(78, 115, 223, .25)
+}
+/*表格行间距*/
+.form-group {
+    margin-bottom: 1rem
+}
+/*按钮颜色*/
+.btn-primary {
+    color: #fff;
+    background-color: #4e73df;
+    border-color: #4e73df
+}
+
+/*按钮形状*/
+.btn-block {
+    display: block;
+    width: 100%
+}
+/*阴影效果*/
+.shadow {
+    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175)!important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175)!important
+}
+
+
+/*上边框距离页面的距离*/
+.len_top {
+    margin-top: 7.5rem!important
+}
+
+/*空白框和表格的间距*/
+.len_inside {
+    padding: 3rem!important
+}
+/*文字居中*/
+.text-center {
+    text-align: center!important
+}
+/*按钮*/
+form.user .btn-user {
+    font-size:.8rem;
+    border-radius:10rem;
+    padding:.75rem 1rem
+}

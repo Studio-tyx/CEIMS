@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.EverydayReportMapper">
+
+    <insert id="insertEverydayReport" parameterType="edu.njust.entity.EverydayReport">
+		insert into EverydayReport values(#{ID},#{submitTime},#{tel},#{addr},#{temperature},#{remark})
+	</insert>
+
+	<select id="selectSeventhReport" parameterType="String" resultType="java.sql.Timestamp">
+		select SubmitTime from everydayReport where ID=#{id} order by SubmitTime desc limit 6,1
+	</select>
+
+	<delete id="deleteAfterSevenDay">
+		delete from EverydayReport where ID=#{param1} and SubmitTime &lt; #{param2}
+	</delete>
+
+	<select id="selectNewestTime" parameterType="String" resultType="java.sql.Timestamp">
+		select max(SubmitTime) from EverydayReport where ID=#{id}
+	</select>
+
+	<select id="selectAll" parameterType="java.sql.Timestamp" resultType="edu.njust.entity.EverydayReport">
+		select ID,SubmitTime as submitTime,Tel as tel,Addr as addr,Temperature as temperature,Remark as remark
+		from EverydayReport where SubmitTime &gt;= #{param1} and SubmitTime &lt;= #{param2}
+	</select>
+
+	<select id="selectUnanswered" resultType="edu.njust.entity.EverydayReport">
+		select EverydayReport.ID,EverydayReport.SubmitTime as submitTime,EverydayReport.Tel as tel,
+		EverydayReport.Addr as addr,EverydayReport.Temperature as temperature,EverydayReport.Remark as remark
+		from EverydayReport left join EverydayRespond
+		on EverydayReport.id=EverydayRespond.id and EverydayRespond.submittime=EverydayReport.submittime
+		where EverydayRespond.id is null and EverydayReport.remark is not null
+	</select>
+
+	<update id="updateTemperature" >
+		update EverydayReport set Temperature=#{param3} where ID=#{param1} and SubmitTime=#{param2}
+	</update>
+</mapper>

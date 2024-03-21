@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.EverydayRespondMapper">
+
+    <insert id="insertEverydayRespond" parameterType="edu.njust.entity.EverydayRespond">
+		insert into EverydayRespond values(#{ID},#{submitTime},#{replyTime},#{adminID},#{msg})
+	</insert>
+
+	<select id="selectMsgByID" parameterType="String" resultType="edu.njust.entity.EverydayRespond">
+		select ID,SubmitTime,ReplyTime,AdminID,Msg from EverydayRespond where ID=#{id}
+	</select>
+
+</mapper>

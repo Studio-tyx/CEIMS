@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.NationalMapper">
+    <insert id="insertNationalNum" parameterType="edu.njust.entity.EpidemicNumber">
+		insert into NationalNum
+		values (#{date},#{XYQZ},#{WZZ},#{XYYS},#{XYZZ},#{LJQZ},#{JWSR},#{LJZY},#{LJSW},
+		#{dXYQZ},#{dWZZ},#{dXYYS},#{dXYZZ},#{dLJQZ},#{dJWSR},#{dLJZY},#{dLJSW})
+	</insert>
+
+    <update id="updateNationalByDate" parameterType="edu.njust.entity.EpidemicNumber">
+        update NationalNum
+        set XYQZ=#{XYQZ},WZZ=#{WZZ},XYYS=#{XYYS},XYZZ=#{XYZZ},LJQZ=#{LJQZ},JWSR=#{JWSR},LJZY=#{LJZY},LJSW=#{LJSW},
+        dXYQZ=#{dXYQZ},dWZZ=#{dWZZ},dXYYS=#{dXYYS},dXYZZ=#{dXYZZ},dLJQZ=#{dLJQZ},dJWSR=#{dJWSR},dLJZY=#{dLJZY},dLJSW=#{dLJSW}
+        where Date=#{date}
+    </update>
+
+    <select id="selectNewest" resultType="java.sql.Date">
+        select max(Date) from NationalNum
+    </select>
+
+    <select id="selectNumByDate" parameterType="java.sql.Date" resultType="edu.njust.entity.EpidemicNumber">
+        select * from NationalNum where Date=#{date}
+    </select>
+
+</mapper>

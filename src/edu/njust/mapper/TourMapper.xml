@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.TourMapper">
+    <select id="selectTourByOutID" parameterType="int" resultType="edu.njust.entity.Tour">
+		select outReportID,approachTime,province,city,area,address from Tour where OutReportID=#{orID}
+	</select>
+	<insert id="insertTour" parameterType="edu.njust.entity.Tour">
+		insert into Tour values (#{outReportID},#{approachTime},#{province},#{city},#{area},#{address})
+	</insert>
+	<select id="selectAllUser" resultType="String">
+		select distinct ID from outreport natural join tour
+	</select>
+
+</mapper>

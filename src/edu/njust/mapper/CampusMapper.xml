@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.njust.mapper.CampusMapper">
+
+    <insert id="insertCampus" parameterType="edu.njust.entity.EpidemicNumber">
+        insert into CampusNum values (#{date},#{XYQZ},#{WZZ},#{XYYS},#{XYZZ},#{LJQZ},#{JWSR},#{LJZY},#{LJSW},
+		#{dXYQZ},#{dWZZ},#{dXYYS},#{dXYZZ},#{dLJQZ},#{dJWSR},#{dLJZY},#{dLJSW})
+    </insert>
+
+    <update id="updateCampus" parameterType="edu.njust.entity.EpidemicNumber">
+        update CampusNum
+        set XYQZ=#{XYQZ},WZZ=#{WZZ},XYYS=#{XYYS},XYZZ=#{XYZZ},LJQZ=#{LJQZ},JWSR=#{JWSR},LJZY=#{LJZY},LJSW=#{LJSW},
+        dXYQZ=#{dXYQZ},dWZZ=#{dWZZ},dXYYS=#{dXYYS},dXYZZ=#{dXYZZ},dLJQZ=#{dLJQZ},dJWSR=#{dJWSR},dLJZY=#{dLJZY},dLJSW=#{dLJSW}
+        where Date=#{date}
+    </update>
+
+    <select id="selectByDate" parameterType="java.sql.Date" resultType="edu.njust.entity.EpidemicNumber">
+        select *from CampusNum where Date=#{date}
+    </select>
+
+</mapper>
